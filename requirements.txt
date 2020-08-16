@@ -1,0 +1,8 @@
+torch>=1.5
+numpy>=1.18
+opencv-python>=4.3
+future
+psutil
+wheel
+requests
+sentencepiece
