@@ -16,6 +16,7 @@ RUN --mount=type=cache,id=apt-dev,target=/var/cache/apt \
     openjdk-11-jre-headless \
     curl \
     libgl1-mesa-glx \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
@@ -47,6 +48,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     openjdk-11-jre-headless \
     curl \
     libgl1-mesa-glx \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp
 
