@@ -2,4 +2,4 @@ torch==1.6
 torchserve==0.1.1
 torch-model-archiver==0.1.1
 numpy==1.18
-opencv-python>=4.3
+opencv-python==4.3.0.38
