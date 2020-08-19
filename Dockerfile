@@ -15,6 +15,7 @@ RUN --mount=type=cache,id=apt-dev,target=/var/cache/apt \
     python3-venv \
     openjdk-11-jre-headless \
     curl \
+    libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
@@ -44,6 +45,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     python3 \
     openjdk-11-jre-headless \
+    curl \
+    libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp
 
