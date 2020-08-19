@@ -30,6 +30,7 @@ RUN update-alternatives --install /usr/local/bin/pip pip /usr/local/bin/pip3 1
 # This is only useful for cuda env 
 # RUN export USE_CUDA=1
 
+RUN pip install --upgrade pip
 ADD requirements.txt .
 RUN pip install -r requirements.txt --no-cache-dir 
 
