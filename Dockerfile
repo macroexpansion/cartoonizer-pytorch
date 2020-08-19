@@ -62,7 +62,7 @@ RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh \
 COPY config.properties /home/model-server/config.properties
 COPY model_store /home/model-server/model_store
 # RUN mkdir /home/model-server/model-store && chown -R model-server /home/model-server/model-store
-RUN chown -R model-server /home/model-server/model-store
+RUN chown -R model-server /home/model-server/model_store
 
 EXPOSE 8080 8081
 
