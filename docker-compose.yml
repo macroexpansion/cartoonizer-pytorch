@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cartoonizer:
+    image: cartoonizer
+    build:
+      context: .
+      dockerfile: Dockerfile
