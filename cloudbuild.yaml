@@ -1,15 +1,9 @@
 steps:
-  - id: 'pull-experimental'
+  - id: 'pull-docker-experimental'
     name: 'gcr.io/cloud-builders/docker'
     args: ['pull', 'docker/dockerfile:experimental']
     env:
       - 'DOCKER_BUILDKIT=1'
-
-  # - id: 'pull-experimental-1.0'
-  #   name: 'gcr.io/cloud-builders/docker'
-  #   args: ['pull', 'docker/dockerfile:1.0-experimental']
-  #   env:
-  #     - 'DOCKER_BUILDKIT=1'
 
   - id: 'build'
     name: 'gcr.io/cloud-builders/docker'
@@ -35,3 +29,5 @@ steps:
 
 images:
   - 'gcr.io/$PROJECT_ID/cartoonize:latest'
+
+timeout: 1000s
