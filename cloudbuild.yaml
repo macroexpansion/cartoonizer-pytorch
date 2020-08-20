@@ -1,0 +1,8 @@
+steps:
+  - id: 'Build'
+    name: 'gcr.io/torchathon/cartoonize'
+    args: [
+      '-t', 'gcr.io/torchathon/cartoonize',
+    ]
+    env:
+      - "DOCKER_BUILDKIT=1"
