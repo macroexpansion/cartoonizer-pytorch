@@ -2,8 +2,9 @@ import requests
 from PIL import Image
 import io
 
+# url = 'http://127.0.0.1:8080/predictions/cartoonize'
+url = 'https://cartoonize-pvowi6uvjq-as.a.run.app/predictions/cartoonize'
 
-url = 'http://127.0.0.1:8080/predictions/cartoonize'
 path = 'cartoonizer/test_images/china6.jpg'
 f = open(path, "rb")
 image = Image.open(f)
