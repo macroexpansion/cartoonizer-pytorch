@@ -29,7 +29,7 @@ steps:
         '--region', 'asia-southeast1', 
         '--platform', 'managed',
         '--port', '8080',
-        '--memory', '4Gi',
+        '--memory', '2Gi',
         '--cpu', '2'
     ]
 
