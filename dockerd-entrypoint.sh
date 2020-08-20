@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+
+
 if [[ "$1" = "serve" ]]; then
     shift 1
     torchserve --start --ncs --ts-config /home/model-server/config.properties
@@ -9,4 +11,4 @@ else
 fi
 
 # prevent docker exit
-tail -f /dev/null
+# tail -f /dev/null
