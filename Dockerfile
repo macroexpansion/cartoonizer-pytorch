@@ -13,7 +13,7 @@ RUN --mount=type=cache,id=apt-dev,target=/var/cache/apt \
     python3-dev \
     python3-distutils \
     python3-venv \
-    openjdk-11-jre-headless \
+    openjdk-11-jdk \
     curl \
     libgl1-mesa-glx \
     libglib2.0-0 \
@@ -45,7 +45,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     python3 \
-    openjdk-11-jre-headless \
+    openjdk-11-jdk \
     curl \
     libgl1-mesa-glx \
     libglib2.0-0 \
