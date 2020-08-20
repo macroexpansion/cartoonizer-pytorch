@@ -11,4 +11,4 @@ else
 fi
 
 # prevent docker exit
-# tail -f /dev/null
+tail -f /dev/null

@@ -1,6 +1,7 @@
 torch==1.6
 torchserve==0.1.1
 torch-model-archiver==0.1.1
+wheel
 numpy==1.18
 scikit-build
 opencv-python==4.3.0.38
