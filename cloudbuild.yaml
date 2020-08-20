@@ -1,8 +1,7 @@
 steps:
-  - id: 'Build'
-    name: 'gcr.io/torchathon/cartoonize'
-    args: [
-      '-t', 'gcr.io/torchathon/cartoonize',
-    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/cartoonize', '.']
     env:
       - "DOCKER_BUILDKIT=1"
+images:
+  - 'gcr.io/$PROJECT_ID/cartoonize'
