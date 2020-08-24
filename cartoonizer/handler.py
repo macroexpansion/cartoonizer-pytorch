@@ -4,6 +4,7 @@ import io
 import numpy as np
 import os
 import cv2
+import base64
 
 from PIL import Image
 from guided_filter import guided_filter
@@ -87,8 +88,9 @@ class ModelHandler(BaseHandler):
             image = Image.fromarray(out)
             image.save(byte_array, format='jpeg')
             byte_array = byte_array.getvalue()
+            base64_str = base64.b64encode(byte_array)
             
-        result = [byte_array]
+        result = [base64_str]
 
         return result
 
