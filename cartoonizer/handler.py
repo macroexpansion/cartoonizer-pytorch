@@ -35,7 +35,6 @@ class ModelHandler(BaseHandler):
         serialized_file = self.manifest['model']['serializedFile']
         if not os.path.isfile(serialized_file):
             raise RuntimeError("Missing the model weights file")
-        # model_pt_path = os.path.join(model_dir, serialized_file)
         self.net = UNet()
         self.net.to(self.device)
         self.net.load_state_dict(torch.load(serialized_file, map_location=self.device))
@@ -88,11 +87,12 @@ class ModelHandler(BaseHandler):
             image = Image.fromarray(out)
             image.save(byte_array, format='jpeg')
             byte_array = byte_array.getvalue()
-            base64_str = base64.b64encode(byte_array)
             
-        result = [base64_str]
+            user_agent = self._context.get_request_header(0, 'User-Agent')
+            if 'curl' in user_agent:
+                return [byte_array]
 
-        return result
+        return [base64.b64encode(byte_array)]
 
 
     def handle(self, data, context):
