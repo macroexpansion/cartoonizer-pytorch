@@ -88,10 +88,6 @@ class ModelHandler(BaseHandler):
             image.save(byte_array, format='jpeg')
             byte_array = byte_array.getvalue()
             
-            user_agent = self._context.get_request_header(0, 'User-Agent')
-            if 'curl' in user_agent:
-                return [byte_array]
-
         return [base64.b64encode(byte_array)]
 
 

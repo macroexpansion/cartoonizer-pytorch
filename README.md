@@ -4,7 +4,7 @@ This Pytorch implementation contains only inference code based on Tensorflow imp
 ## Usage
 ```
 curl -o https://s3.amazonaws.com/model-server/inputs/kitten.jpg
-curl https://cartoonize-pvowi6uvjq-as.a.run.app/predictions/cartoonize -T kitten.jpg -o res.jpg
+curl https://cartoonize-pvowi6uvjq-as.a.run.app/predictions/cartoonize -T kitten.jpg | base64 -d >> res.jpg
 ```
 
 ## Installation
@@ -30,7 +30,7 @@ sh stop.sh
 4. Inference
 ```
 curl -o https://s3.amazonaws.com/model-server/inputs/kitten.jpg
-curl http://127.0.0.1:8080/predictions/cartoonize -T kitten.jpg -o res.jpg
+curl http://127.0.0.1:8080/predictions/cartoonize -T kitten.jpg | base64 -d >> res.jpg
 ```
 5. (Optional) Build and deploy with docker
 
